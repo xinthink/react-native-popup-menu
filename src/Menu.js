@@ -54,6 +54,11 @@ export default class Menu extends Component {
     return this._name;
   }
 
+  open() {
+    this._setOpened(true);
+    this.context.menuActions._notify();
+  }
+
   render() {
     const { style } = this.props;
     const children = this._reduceChildren();
